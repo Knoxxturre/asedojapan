@@ -17,6 +17,4 @@ Building Mechanics:
 * Some buildings have hidden loot
 * Some buildings had their lot changed for balance
 
-If you see any bugs or rebalancing needs, please let me know!
-
-
+If you see any bugs or rebalancing needs, please let me know
