@@ -1,20 +1,47 @@
-# Ancient Structures: Edo Japan v0.1.1
-It's been a bit but we are back at it again with our shenanigans. This time adding a few more goodies in and doing a little more work behind the scenes. I've really been enjoying playing more RPG style modpacks and I felt like exploration was a big thing that should influence the project's dynamics. There are some goodies that are in the works to fully flesh out this project. Hopefully more dungeons will come!
+# Ancient Structures: Edo Japan
 
-New Buildings Added:
-* 6 New Statues
-* 3 New Shrines
+[v0.1.3] — a Minecraft 1.20.1 mod (Fabric + Forge) for the *Ancient Structures* series, adding Japanese Edo-period themed structures, statues, and dungeons to world generation.
 
-Reworked Buildings:
-* The original shrines
-* The temple
-* Samurai mini fort
-* The mini castle
+## Requirements
 
-Building Mechanics:
-* All buildings had their spawn rates reset to normal values
-* Biome generation has been altered. Specific structure sets will now spawn in different biomes than just the original four the pack used
-* Some buildings have hidden loot
-* Some buildings had their lot changed for balance
+- Minecraft 1.20.1
+- [Dawn of Time Builder](https://www.curseforge.com/minecraft/mc-mods/dawn-of-time-builder) >= 1.5.13
+- [Armor of the Ages](https://www.curseforge.com/minecraft/mc-mods/armor-of-the-ages) >= 1.3.5
 
-If you see any bugs or rebalancing needs, please let me know
+This mod is data-driven (structures, loot tables, worldgen) with no custom blocks, items, or entities of its own — it builds on blocksets from Dawn of Time and armor sets from Armor of the Ages.
+
+## What it adds
+
+### Structures
+Generated via jigsaw worldgen, grouped into structure sets:
+
+- **Player structures** (`edo_player` biomes: windswept forest, birch forest, taiga, flower forest) — Samurai House, Mini Castle
+- **Shrines** (`edo_shrine` biomes: cherry grove, grove, windswept forest/gravelly hills, flower forest) — 5 small shrines, 2 torii shrines
+- **Temples** (`edo_temple` biomes: taiga, birch forest, flower forest) — Medium shrine, Large shrine, Grand Buddha, Buddhist Temple
+- **Dungeons** (`edo_dungeon` biomes: taiga, birch forest, old growth birch/spruce/pine taiga) — Mini Cemetery, Kofun
+- **Illager outposts** (`edo_illager` biomes: same as dungeons) — Mini Fort, Wako Outpost
+- **Statues** (`edo_statue` biomes: taiga, birch forest, old growth birch/spruce/pine taiga) — Buddha, Frog, Illager, Kitsune, Tanuki, Villager
+
+### Loot
+Custom loot tables for exterior, farming, interior, and shrine chests, including Japanese-themed and rare Japanese loot pools, with some loot deliberately hidden for exploration.
+
+### Mobs
+No custom mobs are spawned naturally. Instead, the mod ships `/function` commands that summon themed variants using Armor of the Ages equipment, meant to be given out via command/spawn eggs:
+
+- `edo_japan:mobs/o_yoroi_skeleton` — Skeleton in Ō-yoroi armor with an enchanted bow
+- `edo_japan:mobs/o_yoroi_skeleton_rider`
+- `edo_japan:mobs/do_maru_skeleton`
+- `edo_japan:mobs/wither_skeleton_o_yoroi`
+- `edo_japan:mobs/wither_skeleton_raijin` — Wither Skeleton in Raijin armor
+
+## Building
+
+Multi-loader Gradle project (`common` / `fabric` / `forge`).
+
+```
+./gradlew build
+```
+
+## License
+
+GNU GPL 3.0
