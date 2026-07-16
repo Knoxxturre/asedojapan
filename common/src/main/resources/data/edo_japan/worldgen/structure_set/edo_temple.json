@@ -1,26 +1,26 @@
 {
   "structures": [
     {
-      "structure": "edo_japan:medium_shrine",
+      "structure": "edo_japan:m_shrine1",
       "weight": 1
     },
-      {
-          "structure": "edo_japan:large_shrine",
-          "weight": 1
-      },
-      {
-          "structure": "edo_japan:grand_buddha",
-          "weight": 1
-      },
-      {
-          "structure": "edo_japan:buddhist_temple",
-          "weight": 1
-      }
+    {
+      "structure": "edo_japan:lg_shrine",
+      "weight": 1
+    },
+    {
+      "structure": "edo_japan:grand_buddha",
+      "weight": 1
+    },
+    {
+      "structure": "edo_japan:buddhist_temple",
+      "weight": 1
+    }
   ],
   "placement": {
     "type": "minecraft:random_spread",
-    "spacing": 130,
-    "separation": 10,
+    "spacing": 64,
+    "separation": 16,
     "spread_type": "triangular",
     "salt": 11565117
   }

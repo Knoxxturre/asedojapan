@@ -1,0 +1,19 @@
+{
+  "structures": [
+    {
+      "structure": "edo_japan:samurai_house",
+      "weight": 3
+    },
+    {
+      "structure": "edo_japan:mini_castle",
+      "weight": 3
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 164,
+    "separation": 32,
+    "spread_type": "triangular",
+    "salt": 39220
+  }
+}

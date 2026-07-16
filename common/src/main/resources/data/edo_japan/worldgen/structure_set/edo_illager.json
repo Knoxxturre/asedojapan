@@ -1,0 +1,19 @@
+{
+  "structures": [
+    {
+      "structure": "edo_japan:mini_fort",
+      "weight": 3
+    },
+    {
+      "structure": "edo_japan:wako_outpost",
+      "weight": 3
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 64,
+    "separation": 16,
+    "spread_type": "triangular",
+    "salt": 67678
+  }
+}

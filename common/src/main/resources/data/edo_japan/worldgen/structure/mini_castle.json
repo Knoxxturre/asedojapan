@@ -1,11 +1,11 @@
 {
   "type": "minecraft:jigsaw",
-  "biomes": "#edo_japan:edo_village",
+  "biomes": "#edo_japan:edo_player",
   "step": "surface_structures",
   "terrain_adaptation": "beard_thin",
   "spawn_overrides": {},
   "start_pool": "edo_japan:mini_castle",
-  "size": 7,
+  "size": 1,
   "start_height": {
     "absolute": 0
   },

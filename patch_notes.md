@@ -1,10 +1,15 @@
-## Ancient Structures: Edo Japan [v0.1.2]
-- Modified all the weight, spacing and separation to reduce the amount of builds and balance the builds between them
-- Added new building Onsen!
+## Ancient Structures: Edo Japan [v0.1.3]
 
-![onsen building](https://i.imgur.com/iBu7XCt.jpeg)
+It's been a long time since I last brought out an update, but I am here and still kicking it!
 
-If you see any bugs or rebalancing needs, please let me know!
-
-
-
+Let's get down to business:
+- Reworked a few buildings to showcase the new blocksets from Dawn of Time
+- Reworked and renamed Samurai Mini Fort to Samurai house (I plan to bring back the mini fort as a different building!)
+- Removed the Onsen (It's going into a whole new village datapack~ stay tuned >:P)
+- Renamed a lot of the existing structures to make them easier to locate via commands
+- Changed some of the loot in buildings for balancing
+- Hid some loot in buildings (happy hunting :D)
+- Removed custom mobs and spawners. This was barring a lot of progress to a 1.21.1 port
+- Added custom mobs via command eggs (I may hide them in chests :thonk:)
+- Balanced biomes
+- Balance spread and weight of buildings (hopefully this is the last time lol)

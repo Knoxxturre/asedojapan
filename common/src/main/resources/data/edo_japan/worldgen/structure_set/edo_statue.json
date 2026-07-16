@@ -1,0 +1,35 @@
+{
+  "structures": [
+    {
+      "structure": "edo_japan:statue_buddha",
+      "weight": 5
+    },
+    {
+      "structure": "edo_japan:statue_frog",
+      "weight": 5
+    },
+    {
+      "structure": "edo_japan:statue_illager",
+      "weight": 5
+    },
+    {
+      "structure": "edo_japan:statue_kitsune",
+      "weight": 5
+    },
+    {
+      "structure": "edo_japan:statue_tanuki",
+      "weight": 5
+    },
+    {
+      "structure": "edo_japan:statue_villager",
+      "weight": 5
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 32,
+    "separation": 8,
+    "spread_type": "triangular",
+    "salt": 951179220
+  }
+}

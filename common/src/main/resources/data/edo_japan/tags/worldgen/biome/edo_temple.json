@@ -1,7 +1,7 @@
 {
   "values": [
-    "minecraft:old_growth_spruce_taiga",
     "minecraft:taiga",
+    "minecraft:birch_forest",
     "minecraft:flower_forest"
   ]
 }
