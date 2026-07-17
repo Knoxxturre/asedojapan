@@ -1,10 +1,10 @@
 # Ancient Structures: Edo Japan
 
-[v0.1.3] — a Minecraft 1.20.1 mod (Fabric + Forge) for the *Ancient Structures* series, adding Japanese Edo-period themed structures, statues, and dungeons to world generation.
+[v0.2.0] — a Minecraft 1.21.1 mod (Fabric + NeoForge) for the *Ancient Structures* series, adding Japanese Edo-period themed structures, statues, and dungeons to world generation.
 
 ## Requirements
 
-- Minecraft 1.20.1
+- Minecraft 1.21.1
 - [Dawn of Time Builder](https://www.curseforge.com/minecraft/mc-mods/dawn-of-time-builder) >= 1.5.13
 - [Armor of the Ages](https://www.curseforge.com/minecraft/mc-mods/armor-of-the-ages) >= 1.3.5
 
