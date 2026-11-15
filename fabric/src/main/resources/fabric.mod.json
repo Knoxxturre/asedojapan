@@ -17,6 +17,9 @@
     "entrypoints": {
         "main": [
             "org.dawnoftime.asedojapan.ASEdoJapan"
+        ],
+        "client": [
+            "org.dawnoftime.asedojapan.ASEdoJapanClient"
         ]
     },
     "mixins": [
