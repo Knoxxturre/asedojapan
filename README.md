@@ -1,6 +1,6 @@
 # Ancient Structures: Edo Japan
 
-[v0.2.0] — a Minecraft 1.21.1 mod (Fabric + NeoForge) for the *Ancient Structures* series, adding Japanese Edo-period themed structures, statues, and dungeons to world generation.
+[v0.2.1] — a Minecraft 1.21.1 mod (Fabric + NeoForge) for the *Ancient Structures* series, adding Japanese Edo-period themed structures, statues, and dungeons to world generation.
 
 ## Requirements
 
