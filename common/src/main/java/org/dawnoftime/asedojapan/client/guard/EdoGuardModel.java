@@ -14,9 +14,9 @@ import net.minecraft.world.item.ProjectileWeaponItem;
 import org.dawnoftime.asedojapan.entity.guard.EdoGuard;
 
 /**
- * Villager-shaped humanoid model laid out for the vanilla 64x64 villager textures.
- * Head, robe and legs use the vanilla villager UVs; each free arm is built from the villager's
- * crossed-arms texture (upper arm + half of the forearm bar).
+ * Humanoid model with a villager head, laid out for the vanilla 64x64 villager textures.
+ * Head, torso and legs use the vanilla villager UVs on a player-sized body (so armor fits);
+ * each free arm is built from the villager's crossed-arms texture (upper arm + half of the forearm bar).
  *
  * Kick and weapon animations adapted from GuardModel of Guard Villagers by seymourimadeit (TallestEgg), MIT License (see licenses/guardvillagers-LICENSE.txt).
  */
@@ -45,11 +45,14 @@ public class EdoGuardModel extends HumanoidModel<EdoGuard> {
                 CubeListBuilder.create().texOffs(30, 47).addBox(-8.0F, -8.0F, -6.0F, 16.0F, 16.0F, 1.0F),
                 PartPose.rotation(-Mth.HALF_PI, 0.0F, 0.0F));
 
+        // Body and tunic keep the villager's 6-deep UV layout but are squashed to the player's 4-deep torso
+        // (negative Z growth), so armor sits on them like on a player. The robe is cut at the waist so the
+        // legs and leggings are not buried under it.
         PartDefinition body = root.addOrReplaceChild("body",
-                CubeListBuilder.create().texOffs(16, 20).addBox(-4.0F, 0.0F, -3.0F, 8.0F, 12.0F, 6.0F),
+                CubeListBuilder.create().texOffs(16, 20).addBox(-4.0F, 0.0F, -3.0F, 8.0F, 12.0F, 6.0F, new CubeDeformation(0.0F, 0.0F, -1.0F)),
                 PartPose.ZERO);
         body.addOrReplaceChild("jacket",
-                CubeListBuilder.create().texOffs(0, 38).addBox(-4.0F, 0.0F, -3.0F, 8.0F, 20.0F, 6.0F, new CubeDeformation(0.5F)),
+                CubeListBuilder.create().texOffs(0, 38).addBox(-4.0F, 0.0F, -3.0F, 8.0F, 12.0F, 6.0F, new CubeDeformation(0.25F, 0.25F, -0.75F)),
                 PartPose.ZERO);
 
         root.addOrReplaceChild("right_arm",
