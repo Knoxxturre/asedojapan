@@ -16,7 +16,7 @@ import org.dawnoftime.asedojapan.Constants;
 import org.dawnoftime.asedojapan.entity.guard.EdoGuard;
 import org.dawnoftime.asedojapan.entity.guard.EdoGuardTypes;
 import org.dawnoftime.asedojapan.entity.guard.GuardKit;
-import org.dawnoftime.asedojapan.item.EdoGuardSpawnEggItem;
+import org.dawnoftime.asedojapan.item.EdoSpawnEggItem;
 
 /** Fabric registration of the Edo guard entity types, their attributes and spawn eggs. */
 public final class FabricEdoGuards {
@@ -34,7 +34,7 @@ public final class FabricEdoGuards {
             FabricDefaultAttributeRegistry.register(type, EdoGuard.createAttributes());
             TYPES.put(kit, type);
             spawnEggs.add(Registry.register(BuiltInRegistries.ITEM, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, kit.getSpawnEggId()),
-                    new EdoGuardSpawnEggItem(type, new Item.Properties())));
+                    new EdoSpawnEggItem(type, GuardKit.EGG_BACKGROUND_COLOR, GuardKit.EGG_SPOTS_COLOR, new Item.Properties())));
         }
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(entries -> spawnEggs.forEach(entries::accept));
     }

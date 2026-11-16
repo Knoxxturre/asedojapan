@@ -3,24 +3,19 @@ package org.dawnoftime.asedojapan.client.guard;
 import com.mojang.blaze3d.vertex.PoseStack;
 import java.util.Map;
 import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
-import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
-import net.minecraft.client.resources.model.ModelManager;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
+import org.dawnoftime.asedojapan.client.VillagerHeadArmorLayer;
 import org.dawnoftime.asedojapan.entity.guard.EdoGuard;
-import org.joml.Quaternionf;
-import org.joml.Vector3f;
 
 /**
  * Renders Edo guards with arm poses for shields and crossbows.
@@ -47,7 +42,7 @@ public class EdoGuardRenderer extends HumanoidMobRenderer<EdoGuard, EdoGuardMode
     public EdoGuardRenderer(EntityRendererProvider.Context context) {
         super(context, new EdoGuardModel(context.bakeLayer(EdoGuardModelLayers.GUARD)), 0.5F);
         this.addLayer(new VariantLayer(this));
-        this.addLayer(new GuardArmorLayer(this,
+        this.addLayer(new VillagerHeadArmorLayer<>(this,
                 new EdoGuardArmorModel(context.bakeLayer(EdoGuardModelLayers.GUARD_INNER_ARMOR)),
                 new EdoGuardArmorModel(context.bakeLayer(EdoGuardModelLayers.GUARD_OUTER_ARMOR)),
                 context.getModelManager()));
@@ -132,41 +127,6 @@ public class EdoGuardRenderer extends HumanoidMobRenderer<EdoGuard, EdoGuardMode
             ResourceLocation texture = VARIANT_TEXTURES.getOrDefault(guard.getGuardVariant(), DEFAULT_VARIANT_TEXTURE);
             renderColoredCutoutModel(this.getParentModel(), texture, poseStack, buffer, packedLight, guard, -1);
             renderColoredCutoutModel(this.getParentModel(), NITWIT_TEXTURE, poseStack, buffer, packedLight, guard, -1);
-        }
-    }
-
-    /**
-     * Armor layer that lifts helmets onto the villager head, which is 2 pixels taller than a player's.
-     * Vanilla and Armor of the Ages armor models both copy their head pose from the guard model, so the
-     * head pivot is shifted for the duration of this layer only.
-     */
-    private static class GuardArmorLayer extends HumanoidArmorLayer<EdoGuard, EdoGuardModel, EdoGuardArmorModel> {
-
-        private static final float HELMET_LIFT = 2.0F;
-
-        GuardArmorLayer(RenderLayerParent<EdoGuard, EdoGuardModel> parent, EdoGuardArmorModel innerModel,
-                        EdoGuardArmorModel outerModel, ModelManager modelManager) {
-            super(parent, innerModel, outerModel, modelManager);
-        }
-
-        @Override
-        public void render(PoseStack poseStack, MultiBufferSource buffer, int packedLight, EdoGuard guard,
-                           float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw, float headPitch) {
-            ModelPart head = this.getParentModel().head;
-            ModelPart hat = this.getParentModel().hat;
-            PartPose headPose = head.storePose();
-            PartPose hatPose = hat.storePose();
-            // Lift along the head's own up axis so the helmet keeps turning around the real neck pivot.
-            Vector3f lift = new Vector3f(0.0F, -HELMET_LIFT, 0.0F)
-                    .rotate(new Quaternionf().rotationZYX(head.zRot, head.yRot, head.xRot));
-            head.offsetPos(lift);
-            hat.offsetPos(lift);
-            try {
-                super.render(poseStack, buffer, packedLight, guard, limbSwing, limbSwingAmount, partialTick, ageInTicks, netHeadYaw, headPitch);
-            } finally {
-                head.loadPose(headPose);
-                hat.loadPose(hatPose);
-            }
         }
     }
 }

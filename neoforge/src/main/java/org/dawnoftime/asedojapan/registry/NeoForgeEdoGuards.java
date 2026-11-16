@@ -18,7 +18,7 @@ import org.dawnoftime.asedojapan.Constants;
 import org.dawnoftime.asedojapan.entity.guard.EdoGuard;
 import org.dawnoftime.asedojapan.entity.guard.EdoGuardTypes;
 import org.dawnoftime.asedojapan.entity.guard.GuardKit;
-import org.dawnoftime.asedojapan.item.EdoGuardSpawnEggItem;
+import org.dawnoftime.asedojapan.item.EdoSpawnEggItem;
 
 /** NeoForge registration of the Edo guard entity types, their attributes and spawn eggs. */
 public final class NeoForgeEdoGuards {
@@ -33,7 +33,7 @@ public final class NeoForgeEdoGuards {
         for (GuardKit kit : GuardKit.values()) {
             DeferredHolder<EntityType<?>, EntityType<EdoGuard>> type = ENTITY_TYPES.register(kit.getId(), () -> EdoGuardTypes.create(kit));
             TYPES.put(kit, type);
-            SPAWN_EGGS.add(ITEMS.register(kit.getSpawnEggId(), () -> new EdoGuardSpawnEggItem(type, new Item.Properties())));
+            SPAWN_EGGS.add(ITEMS.register(kit.getSpawnEggId(), () -> new EdoSpawnEggItem(type, GuardKit.EGG_BACKGROUND_COLOR, GuardKit.EGG_SPOTS_COLOR, new Item.Properties())));
         }
     }
 
