@@ -9,10 +9,14 @@ import org.dawnoftime.asedojapan.client.guard.EdoGuardArmorModel;
 import org.dawnoftime.asedojapan.client.guard.EdoGuardModel;
 import org.dawnoftime.asedojapan.client.guard.EdoGuardModelLayers;
 import org.dawnoftime.asedojapan.client.guard.EdoGuardRenderer;
+import org.dawnoftime.asedojapan.client.hostile.EdoHostileRenderers;
+import org.dawnoftime.asedojapan.client.hostile.EdoIllagerModel;
 import org.dawnoftime.asedojapan.entity.guard.GuardKit;
+import org.dawnoftime.asedojapan.entity.hostile.HostileKit;
 import org.dawnoftime.asedojapan.registry.ForgeEdoGuards;
+import org.dawnoftime.asedojapan.registry.ForgeEdoHostiles;
 
-/** Client-side Forge registration of the Edo guard models and renderers. */
+/** Client-side Forge registration of the Edo guard and hostile mob models and renderers. */
 @Mod.EventBusSubscriber(modid = Constants.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public final class ForgeEdoGuardsClient {
 
@@ -24,12 +28,16 @@ public final class ForgeEdoGuardsClient {
         event.registerLayerDefinition(EdoGuardModelLayers.GUARD, EdoGuardModel::createBodyLayer);
         event.registerLayerDefinition(EdoGuardModelLayers.GUARD_INNER_ARMOR, EdoGuardArmorModel::createInnerArmorLayer);
         event.registerLayerDefinition(EdoGuardModelLayers.GUARD_OUTER_ARMOR, EdoGuardArmorModel::createOuterArmorLayer);
+        event.registerLayerDefinition(EdoIllagerModel.LAYER, EdoIllagerModel::createBodyLayer);
     }
 
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
         for (GuardKit kit : GuardKit.values()) {
             event.registerEntityRenderer(ForgeEdoGuards.getType(kit), EdoGuardRenderer::new);
+        }
+        for (HostileKit kit : HostileKit.values()) {
+            event.registerEntityRenderer(ForgeEdoHostiles.getType(kit), EdoHostileRenderers.create(kit));
         }
     }
 }

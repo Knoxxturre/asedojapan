@@ -1,6 +1,6 @@
 # Ancient Structures: Edo Japan
 
-[v0.1.4] — a Minecraft 1.20.1 mod (Fabric + Forge) for the *Ancient Structures* series, adding Japanese Edo-period themed structures, statues, and dungeons to world generation.
+[v0.1.4.1] — a Minecraft 1.20.1 mod (Fabric + Forge) for the *Ancient Structures* series, adding Japanese Edo-period themed structures, statues, and dungeons to world generation.
 
 ## Requirements
 
@@ -8,7 +8,7 @@
 - [Dawn of Time Builder](https://www.curseforge.com/minecraft/mc-mods/dawn-of-time-builder) >= 1.5.54
 - [Armor of the Ages](https://www.curseforge.com/minecraft/mc-mods/armor-of-the-ages) >= 1.3.16
 
-This mod is data-driven (structures, loot tables, worldgen) with no custom blocks, items, or entities of its own — it builds on blocksets from Dawn of Time and armor sets from Armor of the Ages.
+Structures, loot tables and worldgen are data-driven, built on blocksets from Dawn of Time. The mod's own mobs wear armor sets from Armor of the Ages.
 
 ## What it adds
 
@@ -26,13 +26,28 @@ Generated via jigsaw worldgen, grouped into structure sets:
 Custom loot tables for exterior, farming, interior, and shrine chests, including Japanese-themed and rare Japanese loot pools, with some loot deliberately hidden for exploration.
 
 ### Mobs
-No custom mobs are spawned naturally. Instead, the mod ships `/function` commands that summon themed variants using Armor of the Ages equipment, meant to be given out via command/spawn eggs:
+No mobs spawn naturally. Each one has a spawn egg in the Spawn Eggs creative tab and always wears its Armor of the Ages kit.
 
-- `edo_japan:mobs/o_yoroi_skeleton` — Skeleton in Ō-yoroi armor with an enchanted bow
-- `edo_japan:mobs/o_yoroi_skeleton_rider`
-- `edo_japan:mobs/do_maru_skeleton`
-- `edo_japan:mobs/wither_skeleton_o_yoroi`
-- `edo_japan:mobs/wither_skeleton_raijin` — Wither Skeleton in Raijin armor
+Guards (villagers that defend the area around where they were placed):
+
+- Villager Samurai — Japanese light armor, sword and shield
+- Villager Oyumi — Japanese light armor, crossbow
+- Villager O-Yoroi Samurai — O-Yoroi armor, sword and shield
+- Villager O-Yoroi Oyumi — O-Yoroi armor, crossbow
+
+Hostile:
+
+- Wither Raijin Samurai — Wither Skeleton in Raijin armor with a sword
+- Wither Raijin Oyumi — Wither Skeleton in Raijin armor with a Power V bow
+- Skeleton O-Yoroi Samurai — Skeleton in O-Yoroi armor with a sword
+- Skeleton O-Yoroi Oyumi — Skeleton in O-Yoroi armor with a Power V bow
+- Skeleton O-Yoroi Samurai Rider — Skeleton O-Yoroi Samurai on a skeleton horse
+- Skeleton O-Yoroi Oyumi Rider — Skeleton O-Yoroi Oyumi on a skeleton horse
+- Zombie Samurai — Zombie in Japanese light armor with a sword
+- Skeleton Samurai — Skeleton in Japanese light armor with a sword
+- Skeleton Oyumi — Skeleton in Japanese light armor with a Power V bow
+- Pillager Oyumi — Pillager in Japanese light armor with a crossbow
+- Vindicator Samurai — Vindicator in Japanese light armor with a sword
 
 ## Building
 
